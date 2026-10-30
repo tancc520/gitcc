@@ -1,0 +1,54 @@
+from tkinter import *
+import tkinter.messagebox
+root=Tk()
+def xz():
+    answer=tkinter.messagebox.askokcancel('请选择','请选择确定或取消')
+    if answer:
+        lb.config(text='已确认')
+    else:
+        lb.config(text='已取消')
+lb=Label(root,text='')
+lb.pack()
+btn=Button(root,text='弹出对话框',command=xz)
+btn.pack()
+root.mainloop()
+
+#askstring() askinteger() askfloat()
+from tkinter.simpledialog import *
+root=Tk()
+def xz():
+    s=askinteger('请输入','请输入一串文字')
+    lb.config(text=s)
+lb=Label(root,text='')
+lb.pack()
+btn=Button(root,text='弹出输入对话框',command=xz)
+btn.pack()
+root.mainloop()
+
+from tkinter import *
+import tkinter.filedialog
+root=Tk()
+def xz():
+    filename=tkinter.filedialog.askopenfilename()
+    if filename!='':
+        lb.config(text='您选择的文件是：'+filename)
+    else:
+        lb.config(text='您没有选择任何文件')
+lb=Label(root,text='')
+lb.pack()
+btn=Button(root,text='弹出文件选择对话框',command=xz)
+btn.pack()
+root.mainloop()
+
+from tkinter import *
+import tkinter.colorchooser
+root=Tk()
+def xz():
+    color=tkinter.colorchooser.askcolor()
+    colorstr=str(color)
+    lb.config(text=colorstr[-9:-2],background=colorstr[-9:-2])
+lb=Label(root,text='请关注颜色的变化')
+lb.pack()
+btn=Button(root,text='弹出颜色选择对话框',command=xz)
+btn.pack()
+root.mainloop()

@@ -1,0 +1,24 @@
+#include <iostream>
+using namespace std;
+
+int main(){
+    signed int b=-9;       //signed : 有符号型
+    unsigned int a=10;      //unsigned :无符号型
+    
+    enum color{
+        red,blue,green,purple
+    }c;
+    c=blue;
+    cout <<c<<endl;     //输出1   
+
+    //C++ 中有四种类型转换：静态转换、动态转换、常量转换和重新解释转换。
+
+    //静态转换:强制将一种类型的值转换为另一种类型
+    int t=10;
+    float f=static_cast <float>(t);    
+
+    //动态转换：常用于将一个基类指针或引用转换为派生类指针或引用
+
+
+    return 0;
+}
