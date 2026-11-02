@@ -1,24 +1,23 @@
-#include <bits/stdc++.h>
+#include <bits/stdc++.h>  
 using namespace std;
 using ll=long long;
 
 int main(){
     ios::sync_with_stdio(false);
-    cin.tie(nullptr);
+    cin.tie(nullptr);   
 
     int n;
     cin>>n;
-    
-    ll cur=0;
-    ll ans=LLONG_MIN; //“求最大用最小垫底，求最小用最大封顶”。
 
+    ll sum=0,maxsum=LLONG_MIN;   //求最大用最小垫底
     for(int i=0;i<n;i++){
-        ll x;
+        int x;
         cin>>x;
-        cur=max(x,cur+x);
-        ans=max(ans,cur);
+        sum+=x;
+        maxsum=max(maxsum,sum);
+        if(sum<0) sum=0;
     }
-    cout<<ans<<'\n';
+    cout<<maxsum<<"\n";
 
     return 0;
 }
